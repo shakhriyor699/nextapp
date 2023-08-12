@@ -12,7 +12,7 @@ export interface IData {
   username: string
 }
 
-export const getData = async (): Promise<IData[]> => {
+const getData = async (): Promise<IData[]> => {
   const res = await fetch('http://localhost:3000/api/posts', {
     cache: 'no-store',
   })
@@ -38,13 +38,13 @@ const Blog = async () => {
           >
             <div className={styles.imageContainer}>
               <Image
-              unoptimized
-              src={item.img}
-              alt=""
-              width={400}
-              height={250}
-              className={styles.image}
-            />
+                unoptimized
+                src={item.img}
+                alt=""
+                width={400}
+                height={250}
+                className={styles.image}
+              />
             </div>
             <div className={styles.content}>
               <h1 className={styles.title}>{item.title}</h1>
